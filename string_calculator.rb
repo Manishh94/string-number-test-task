@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Allow the add method to handle new lines between numbers (instead of commas).
 
 # The following input is valid: "1\n2,3" (will return 6)
@@ -25,7 +27,7 @@ class StringCalculator
     numbers = numbers.gsub(/\n/, delimiter)
     numbers_array = numbers.split(delimiter).map(&:to_i)
 
-    negatives = numbers_array.select { |num| num < 0 }
+    negatives = numbers_array.select(&:negative?)
     raise "Negative numbers not allowed: #{negatives.join(',')}" if negatives.any?
 
     numbers_array.sum
