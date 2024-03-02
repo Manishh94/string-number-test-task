@@ -1,5 +1,3 @@
-# string_calculator.rb
-
 # Allow the add method to handle new lines between numbers (instead of commas).
 
 # The following input is valid: "1\n2,3" (will return 6)
@@ -13,5 +11,6 @@
 
 class StringCalculator
   def self.add(numbers)
+    return 0 if numbers.empty?
   end
 end
