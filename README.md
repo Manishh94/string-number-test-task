@@ -21,3 +21,7 @@ git push -u origin main
 git fetch origin
 git checkout main
 git pull origin main
+
+
+# To check rubocop
+rubocop filename.rb
