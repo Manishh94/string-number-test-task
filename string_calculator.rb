@@ -13,11 +13,11 @@ class StringCalculator
   def self.add(numbers)
     return 0 if numbers.empty?
 
-    delimiter = ","
-    if numbers.start_with?("//")
-      custom_delimiter_match = /^\/\/(.+)\n/.match(numbers)
+    delimiter = ','
+    if numbers.start_with?('//')
+      custom_delimiter_match = %r{^//(.+)\n}.match(numbers)
       delimiter = custom_delimiter_match[1] if custom_delimiter_match
-      numbers = numbers.sub(/^\/\/.+\n/, "")
+      numbers = numbers.sub(%r{^//.+\n}, '')
     end
 
     numbers = numbers.gsub(/\n/, delimiter)
