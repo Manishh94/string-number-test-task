@@ -14,6 +14,11 @@ class StringCalculator
     return 0 if numbers.empty?
 
     delimiter = ","
+    if numbers.start_with?("//")
+      custom_delimiter_match = /^\/\/(.+)\n/.match(numbers)
+      delimiter = custom_delimiter_match[1] if custom_delimiter_match
+      numbers = numbers.sub(/^\/\/.+\n/, "")
+    end
 
     numbers = numbers.gsub(/\n/, delimiter)
     numbers_array = numbers.split(delimiter).map(&:to_i)
