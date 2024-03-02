@@ -4,7 +4,9 @@
 # The following input is invalid: "1,\n"
 # Support different delimiters
 
-# To change delimiter, the beginning of the string will contain a separate line that looks like this: "//[delimiter]\n[numbers…]", for example "//;\n1;2" here the delimiter is ";" and this should return 3.
+# To change delimiter, the beginning of the string will contain a separate line
+# that looks like this: "//[delimiter]\n[numbers…]", for example "//;\n1;2"
+# here the delimiter is ";" and this should return 3.
 # Calling add with a negative number will throw an exception "negative numbers not allowed <negative_number>".
 
 # If there are multiple negative numbers, show all of them in the exception message, separated by commas
